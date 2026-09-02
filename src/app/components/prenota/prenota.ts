@@ -14,9 +14,9 @@ export class Prenota implements OnInit {
   showAlert: boolean = false;
   alertMessage: string = '';
 
-  private service_id = "service_fudclb9";
-  private template_id = "template_0dypajd";
-  private public_key = "Uw3j_4-L01jNtTBjo";
+  private service_id = "service_q6ounjs";
+  private template_id = "template_5fpn694";
+  private public_key = "RGz_4DKwR9cexmdMC";
 
   constructor(private seoService: SeoService) {}
 
