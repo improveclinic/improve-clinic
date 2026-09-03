@@ -1,3 +1,7 @@
+/* ========================= */
+/* TITOLO */
+/* ========================= */
+
 .gallery-title .gallery-eyebrow {
     display: block;
     letter-spacing: 4px;
@@ -18,6 +22,11 @@
     color: #555;
     line-height: 1.6;
 }
+
+
+/* ========================= */
+/* GALLERIA */
+/* ========================= */
 
 .art-gallery {
     display: grid;
@@ -45,15 +54,26 @@
     transform: scale(1.08);
 }
 
+
+/* Overlay */
+
 .art-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.0),
-            rgba(0, 0, 0, 0.75));
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.75)
+        );
+
     display: flex;
     align-items: flex-end;
+
     padding: 1.5rem;
+
     opacity: 0;
+
     transition: opacity 0.4s ease;
 }
 
@@ -63,12 +83,19 @@
 
 .art-overlay span {
     color: white;
+
     font-size: 0.95rem;
+
     letter-spacing: 2px;
+
     text-transform: uppercase;
 }
 
-/* Varianti layout */
+
+/* ========================= */
+/* VARIANTI LAYOUT */
+/* ========================= */
+
 .art-item.large {
     grid-column: span 2;
     grid-row: span 2;
@@ -82,43 +109,387 @@
     grid-column: span 2;
 }
 
+
+/* ========================= */
+/* LIGHTBOX */
+/* ========================= */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(0, 0, 0, 0.94);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 90px;
+
+    animation: lightboxFadeIn 0.25s ease;
+}
+
+
+/* Contenitore immagine + titolo */
+
+.lightbox-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+
+/* Immagine fullscreen */
+
+.lightbox-image {
+    display: block;
+
+    max-width: 90vw;
+    max-height: 82vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 50px rgba(0, 0, 0, 0.5);
+
+    user-select: none;
+}
+
+
+/* Titolo sotto la foto */
+
+.lightbox-info {
+    margin-top: 18px;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 0.95rem;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    opacity: 0.9;
+
+    min-height: 20px;
+}
+
+
+/* ========================= */
+/* PULSANTE CHIUDI */
+/* ========================= */
+
+.lightbox-close {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    font-size: 1.3rem;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+    z-index: 2;
+}
+
+.lightbox-close:hover {
+    background: #e01d85;
+
+    transform: scale(1.08);
+}
+
+
+/* ========================= */
+/* FRECCE */
+/* ========================= */
+
+.lightbox-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+    z-index: 2;
+}
+
+.lightbox-arrow:hover {
+    background: #e01d85;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+/* Freccia sinistra */
+
+.lightbox-prev {
+    left: 25px;
+}
+
+
+/* Freccia destra */
+
+.lightbox-next {
+    right: 25px;
+}
+
+
+/* ========================= */
+/* CONTATORE */
+/* ========================= */
+
+.lightbox-counter {
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: white;
+
+    font-size: 0.9rem;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    user-select: none;
+}
+
+
+/* ========================= */
+/* ANIMAZIONE */
+/* ========================= */
+
+@keyframes lightboxFadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
 @media (max-width: 998px) {
+
     .art-gallery {
         grid-template-columns: repeat(2, 1fr);
+
         grid-auto-rows: 240px;
+
         gap: 1.25rem;
+
         padding: 0 1.5rem;
     }
 
+
     .art-item.large {
         grid-column: span 2;
+
         grid-row: span 2;
     }
+
 
     .art-item.tall,
     .art-item.wide {
         grid-column: span 1;
+
         grid-row: span 1;
     }
+
+
+    .lightbox {
+        padding: 50px 70px;
+    }
+
+
+    .lightbox-image {
+        max-width: 88vw;
+
+        max-height: 82vh;
+    }
+
 }
 
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
 @media (max-width: 576px) {
+
     .art-gallery {
         grid-template-columns: repeat(1, 1fr);
+
         grid-auto-rows: 220px;
+
+        gap: 1rem;
+
+        padding: 0 1rem;
     }
+
 
     .art-item.large {
         grid-column: span 1;
+
         grid-row: span 1;
     }
+
 
     .art-item.tall {
         grid-row: span 1;
     }
 
+
     .art-item.wide {
         grid-column: span 1;
     }
-}
 
+
+    /* Lightbox mobile */
+
+    .lightbox {
+        padding: 60px 15px 50px;
+    }
+
+
+    .lightbox-content {
+        max-width: 94vw;
+
+        max-height: 85vh;
+    }
+
+
+    .lightbox-image {
+        max-width: 94vw;
+
+        max-height: 72vh;
+
+        border-radius: 5px;
+    }
+
+
+    .lightbox-info {
+        margin-top: 12px;
+
+        font-size: 0.8rem;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* Frecce mobile */
+
+    .lightbox-arrow {
+        width: 45px;
+        height: 45px;
+
+        font-size: 1.2rem;
+    }
+
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+
+    /* X mobile */
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+
+        width: 42px;
+        height: 42px;
+    }
+
+
+    /* Contatore mobile */
+
+    .lightbox-counter {
+        bottom: 15px;
+
+        font-size: 0.8rem;
+    }
+
+}

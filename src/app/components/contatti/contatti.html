@@ -1,75 +1,334 @@
 <div class="container py-5 my-5 d-flex justify-content-center align-content-center"
     style="min-height: 80vh; flex-direction: column;">
 
-    <!-- Sezione Social -->
-    <div class="text-center mb-5">
-        <h2 class="fw-bold montserrat-bold">Seguici sui social</h2>
-        <p class="mb-4">Resta aggiornato su novità e promozioni!</p>
-        <div class="d-flex justify-content-center gap-4 mb-4">
-            <a href="https://www.instagram.com/improveclinic_rovereto/" target="_blank"
-                class="text-decoration-none text-dark fs-3 social-icon">
-                <i class="bi bi-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/people/Improve-clinic-Rovereto/61576034880646/" target="_blank"
-                class="text-decoration-none text-dark fs-3 social-icon">
-                <i class="bi bi-facebook"></i>
-            </a>
+    <!-- Alert -->
+    @if(showAlert) {
+    <div class="alert-overlay">
+        <div class="alert-box">
+            <p>{{ alertMessage }}</p>
+
+            <button
+                type="button"
+                (click)="closeAlert()"
+                class="text-white">
+                OK
+            </button>
         </div>
     </div>
+    }
+
+    <!-- Sezione Social -->
+    <div class="text-center mb-5">
+
+        <h2 class="fw-bold montserrat-bold">
+            Seguici sui social
+        </h2>
+
+        <p class="mb-4">
+            Resta aggiornato su novità e promozioni!
+        </p>
+
+        <div class="d-flex justify-content-center gap-4 mb-4">
+
+            <a
+                href="https://www.instagram.com/improveclinic_rovereto/"
+                target="_blank"
+                class="text-decoration-none text-dark fs-3 social-icon">
+
+                <i class="bi bi-instagram"></i>
+
+            </a>
+
+            <a
+                href="https://www.facebook.com/people/Improve-clinic-Rovereto/61576034880646/"
+                target="_blank"
+                class="text-decoration-none text-dark fs-3 social-icon">
+
+                <i class="bi bi-facebook"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
 
     <!-- Dove trovarci -->
     <div class="text-center mb-5">
-        <h2 class="fw-bold montserrat-bold">Ecco dove trovarci</h2>
-        <p class="mb-2">Ti forniremo tutti i dettagli per raggiungerci facilmente.</p>
+
+        <h2 class="fw-bold montserrat-bold">
+            Ecco dove trovarci
+        </h2>
+
+        <p class="mb-2">
+            Ti forniremo tutti i dettagli per raggiungerci facilmente.
+        </p>
+
     </div>
+
 
     <!-- Contatti principali -->
     <div class="row g-4 mb-5 justify-content-center">
+
         <!-- Indirizzo -->
         <div class="col-12 col-md-4">
-            <div class="card rounded-4 shadow-sm text-center p-4" style="background-color: #f5f5f5; height: 100%;">
-                <i class="bi bi-geo-alt-fill mb-3" style="font-size: 2.2rem; color:#e01d85;"></i>
-                <h5 class="fw-bold">Indirizzo</h5>
+
+            <div
+                class="card rounded-4 shadow-sm text-center p-4"
+                style="background-color: #f5f5f5; height: 100%;">
+
+                <i
+                    class="bi bi-geo-alt-fill mb-3"
+                    style="font-size: 2.2rem; color:#e01d85;">
+                </i>
+
+                <h5 class="fw-bold">
+                    Indirizzo
+                </h5>
+
                 <p class="mb-0">
-                    <a href="https://maps.app.goo.gl/stPFivXpqEy4duQt6" target="_blank"
+
+                    <a
+                        href="https://maps.app.goo.gl/stPFivXpqEy4duQt6"
+                        target="_blank"
                         class="text-decoration-none text-dark">
-                        Via del Garda, 46<br>38068 Rovereto (TN)
+
+                        Via del Garda, 46<br>
+                        38068 Rovereto (TN)
+
                     </a>
+
                 </p>
+
             </div>
+
         </div>
+
 
         <!-- Telefono -->
         <div class="col-12 col-md-4">
-            <div class="card rounded-4 shadow-sm text-center p-4" style="background-color: #f5f5f5; height: 100%;">
-                <i class="bi bi-telephone-fill mb-3" style="font-size: 2.2rem; color:#e01d85;"></i>
-                <h5 class="fw-bold">Telefono</h5>
+
+            <div
+                class="card rounded-4 shadow-sm text-center p-4"
+                style="background-color: #f5f5f5; height: 100%;">
+
+                <i
+                    class="bi bi-telephone-fill mb-3"
+                    style="font-size: 2.2rem; color:#e01d85;">
+                </i>
+
+                <h5 class="fw-bold">
+                    Telefono
+                </h5>
+
                 <p class="mb-0">
-                    <a href="tel:+393409203426" class="text-decoration-none text-dark">+39 340 920 3426</a>
+
+                    <a
+                        href="tel:+393409203426"
+                        class="text-decoration-none text-dark">
+
+                        +39 340 920 3426
+
+                    </a>
+
                 </p>
+
             </div>
+
         </div>
+
 
         <!-- Email -->
         <div class="col-12 col-md-4">
-            <div class="card rounded-4 shadow-sm text-center p-4" style="background-color: #f5f5f5; height: 100%;">
-                <i class="bi bi-envelope-fill mb-3" style="font-size: 2.2rem; color:#e01d85;"></i>
-                <h5 class="fw-bold">Email</h5>
+
+            <div
+                class="card rounded-4 shadow-sm text-center p-4"
+                style="background-color: #f5f5f5; height: 100%;">
+
+                <i
+                    class="bi bi-envelope-fill mb-3"
+                    style="font-size: 2.2rem; color:#e01d85;">
+                </i>
+
+                <h5 class="fw-bold">
+                    Email
+                </h5>
+
                 <p class="mb-0">
-                    <a href="mailto:info@improveclinic.com"
-                        class="text-decoration-none text-dark">info@improveclinic.com</a>
+
+                    <a
+                        href="mailto:info@improveclinic.com"
+                        class="text-decoration-none text-dark">
+
+                        info@improveclinic.com
+
+                    </a>
+
                 </p>
+
             </div>
+
         </div>
+
     </div>
 
+
     <!-- Google Maps -->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mb-5">
+
         <div class="col-12">
+
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2778.2335196028903!2d11.009586976741064!3d45.8666374064968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa212713eeee36329%3A0x2283f52aab781a9!2sIMPROVE%20CLINIC!5e0!3m2!1sit!2sit!4v1768604202786!5m2!1sit!2sit"
-                width="100%" height="750" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade" class="shadow-lg rounded-4"></iframe>
+                width="100%"
+                height="750"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="shadow-lg rounded-4">
+            </iframe>
+
         </div>
+
     </div>
+
+
+    <!-- Form di contatto -->
+    <div class="text-center mb-5 mt-5">
+
+        <h2 class="fw-bold montserrat-bold">
+            Hai bisogno di informazioni?
+        </h2>
+
+        <p class="mb-2">
+            Compila il modulo e ti ricontatteremo al più presto.
+        </p>
+
+    </div>
+
+
+    <!-- Form -->
+    <div class="d-flex justify-content-center">
+
+        <form
+            #contactForm="ngForm"
+            (ngSubmit)="sendEmail(contactForm)"
+            style="max-width: 800px; width: 100%;">
+
+            <div
+                class="card shadow-lg border-0 rounded-4"
+                style="background-color: #f5f5f5;">
+
+                <div class="card-body p-4">
+
+
+                    <!-- Nome -->
+                    <div class="mb-3">
+
+                        <label
+                            for="name"
+                            class="form-label">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control form-focus"
+                            id="name"
+                            [(ngModel)]="name"
+                            name="name"
+                            placeholder="Il tuo nome"
+                            required>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="mb-3">
+
+                        <label
+                            for="email"
+                            class="form-label">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control form-focus"
+                            id="email"
+                            [(ngModel)]="email"
+                            name="email"
+                            placeholder="La tua email"
+                            required>
+
+                    </div>
+
+
+                    <!-- Telefono -->
+                    <div class="mb-3">
+
+                        <label
+                            for="phone"
+                            class="form-label">
+                            Telefono
+                        </label>
+
+                        <input
+                            type="tel"
+                            class="form-control form-focus"
+                            id="phone"
+                            [(ngModel)]="phone"
+                            name="phone"
+                            placeholder="Il tuo numero di telefono"
+                            required>
+
+                    </div>
+
+
+                    <!-- Messaggio -->
+                    <div class="mb-4">
+
+                        <label
+                            for="notes"
+                            class="form-label">
+                            Corpo del testo
+                        </label>
+
+                        <textarea
+                            class="form-control form-focus"
+                            id="notes"
+                            [(ngModel)]="notes"
+                            name="notes"
+                            rows="4"
+                            placeholder="Inserisci eventuali note"
+                            required>
+                        </textarea>
+
+                    </div>
+
+
+                    <!-- Invio -->
+                    <button
+                        type="submit"
+                        class="btn btn-lg rounded-pill px-5 w-100">
+
+                        <i class="bi bi-send"></i>
+                        Contattaci
+
+                    </button>
+
+
+                    <p class="text-center mt-4 mb-0">
+                        Ti risponderemo al più presto.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
 </div>

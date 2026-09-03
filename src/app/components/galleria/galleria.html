@@ -1,204 +1,149 @@
-<div class="container py-5 my-5 d-flex justify-content-center align-content-center" style="min-height: 80vh; flex-direction: column;">
-  <!-- Titolo e descrizione -->
-  <div class="gallery-title text-center mb-5">
-    <span class="gallery-eyebrow">Portfolio</span>
-    <h1 class="fw-bold">Gallery immagini</h1>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat omnis aliquam, aperiam doloremque asperiores voluptatem nisi! Voluptas ullam qui quisquam eaque aspernatur dolorem! Suscipit rerum eos nemo ullam consequuntur distinctio.
-    </p>
-</div>
+```html
+<div
+    class="container py-5 my-5 d-flex justify-content-center align-content-center"
+    style="min-height: 80vh; flex-direction: column;">
 
-<section class="py-5 my-5">
+    <!-- Titolo e descrizione -->
+    <div class="gallery-title text-center mb-5">
+
+        <span class="gallery-eyebrow">
+            Portfolio
+        </span>
+
+        <h1 class="fw-bold">
+            Gallery immagini
+        </h1>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Placeat omnis aliquam, aperiam doloremque asperiores voluptatem nisi!
+            Voluptas ullam qui quisquam eaque aspernatur dolorem!
+            Suscipit rerum eos nemo ullam consequuntur distinctio.
+        </p>
+
+    </div>
+
+
+    <!-- Galleria -->
+    <section class="py-5 my-5">
+
         <div class="art-gallery">
-            <div class="art-item large">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Custom Blackwork</span>
-                </div>
-            </div>
 
-            <div class="art-item tall">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
+            @for (image of images; track $index; let i = $index) {
 
-            <div class="art-item">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
+                <div
+                    class="art-item"
+                    [class.large]="image.type === 'large'"
+                    [class.tall]="image.type === 'tall'"
+                    [class.wide]="image.type === 'wide'"
+                    (click)="openLightbox(i)">
 
-            <div class="art-item">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
+                    <img
+                        [src]="image.src"
+                        [alt]="image.alt">
 
-            <div class="art-item tall">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
+                    <div class="art-overlay">
 
-            <div class="art-item wide">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
+                        <span>
+                            {{ image.title }}
+                        </span>
 
-            <div class="art-item tall">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
+                    </div>
 
-            <div class="art-item">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
                 </div>
-            </div>
 
-            <div class="art-item">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
+            }
 
-            <div class="art-item large">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Custom Blackwork</span>
-                </div>
-            </div>
-
-            <div class="art-item tall">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item tall">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item wide">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item tall">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item large">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Custom Blackwork</span>
-                </div>
-            </div>
-
-            <div class="art-item tall">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item tall">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item wide">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item tall">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
-
-            <div class="art-item">
-                <img src="/noi.jpg" alt="Il lavoro con noi!">
-                <div class="art-overlay">
-                    <span>Black & Grey</span>
-                </div>
-            </div>
         </div>
+
     </section>
-  
+
 </div>
+
+
+<!-- ========================= -->
+<!-- LIGHTBOX -->
+<!-- ========================= -->
+
+@if (lightboxOpen) {
+
+    <div
+        class="lightbox"
+        (click)="closeLightbox()">
+
+
+        <!-- Pulsante chiudi -->
+        <button
+            type="button"
+            class="lightbox-close"
+            (click)="closeLightbox(); $event.stopPropagation()"
+            aria-label="Chiudi">
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+
+        <!-- Freccia precedente -->
+        <button
+            type="button"
+            class="lightbox-arrow lightbox-prev"
+            (click)="previousImage(); $event.stopPropagation()"
+            aria-label="Immagine precedente">
+
+            <i class="bi bi-chevron-left"></i>
+
+        </button>
+
+
+        <!-- Contenuto lightbox -->
+        <div
+            class="lightbox-content"
+            (click)="$event.stopPropagation()">
+
+
+            <!-- Immagine -->
+            <img
+                class="lightbox-image"
+                [src]="images[currentImage].src"
+                [alt]="images[currentImage].alt">
+
+
+            <!-- Titolo -->
+            <div class="lightbox-info">
+
+                <span>
+                    {{ images[currentImage].title }}
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Freccia successiva -->
+        <button
+            type="button"
+            class="lightbox-arrow lightbox-next"
+            (click)="nextImage(); $event.stopPropagation()"
+            aria-label="Immagine successiva">
+
+            <i class="bi bi-chevron-right"></i>
+
+        </button>
+
+
+        <!-- Contatore -->
+        <div
+            class="lightbox-counter"
+            (click)="$event.stopPropagation()">
+
+            {{ currentImage + 1 }} / {{ images.length }}
+
+        </div>
+
+    </div>
+
+}
+```

@@ -1,63 +1,20 @@
 <div class="container py-5 my-5 d-flex justify-content-center align-content-center"
   style="min-height: 80vh; flex-direction: column;">
 
-  @if(showAlert) {
-  <div class="alert-overlay">
-    <div class="alert-box">
-      <p>{{ alertMessage }}</p>
-      <button (click)="closeAlert()" class="text-white" style="background-color: #e01d85;">OK</button>
-    </div>
-  </div>
-  }
-
   <!-- Titolo e descrizione -->
   <div class="text-center mb-5">
-    <h1 class="fw-bold">Invia una richiesta</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed magnam, laborum eligendi minus placeat, sequi voluptate unde sapiente facere molestias facilis? Officia nihil, velit laudantium assumenda quo quos nobis aut.</p>
+    <h1 class="fw-bold">Prenota un appuntamento</h1>
+
+    <p>
+      Scegli il giorno e l'orario più comodo per il tuo appuntamento
+      presso Improve Clinic.
+    </p>
   </div>
 
-  <!-- Form card -->
-  <div class="d-flex justify-content-center">
-    <div class="card shadow-lg border-0 rounded-4" style="max-width: 800px; width: 100%; background-color: #f5f5f5;">
-      <div class="card-body p-4">
-
-        <div class="mb-3">
-          <label for="name" class="form-label">Nome</label>
-          <input type="text" class="form-control form-focus" id="name" [(ngModel)]="name" name="name"
-            placeholder="Il tuo nome" required>
-        </div>
-
-        <!-- Email -->
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control form-focus" id="email" [(ngModel)]="email" name="email"
-            placeholder="La tua email" required>
-        </div>
-
-        <!-- Telefono -->
-        <div class="mb-3">
-          <label for="phone" class="form-label">Telefono</label>
-          <input type="tel" class="form-control form-focus" id="phone" [(ngModel)]="phone" name="phone"
-            placeholder="Il tuo numero di telefono" required>
-        </div>
-
-        <!-- Corpo del testo -->
-        <div class="mb-4">
-          <label for="notes" class="form-label">Corpo del testo</label>
-          <textarea class="form-control form-focus" id="notes" [(ngModel)]="notes" name="notes" rows="4"
-            placeholder="Inserisci eventuali note"></textarea>
-        </div>
-
-        <!-- Bottone invio -->
-        <a (click)="sendEmail()" class="btn btn-outline-light btn-lg rounded-pill px-5 w-100">
-          <i class="bi bi-send"></i> Contattaci
-        </a>
-
-        <p class="text-center mt-4 mb-0">
-          Ti risponderemo al più presto per Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, obcaecati? Impedit nobis perspiciatis ab quos a sint dicta animi quod nisi fuga. Obcaecati autem eos reprehenderit iste dignissimos, accusamus distinctio?
-        </p>
-
-      </div>
-    </div>
+  <!-- Calendly -->
+  <div
+    id="calendly-embed"
+    style="min-width: 320px; height: 750px;">
   </div>
+
 </div>

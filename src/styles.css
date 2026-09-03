@@ -2,6 +2,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+/* SFONDO GLOBALE */
+body {
+  background-color: #fafafa;
+
+  background-image:
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(224, 29, 133, 0.22) 0%,
+      rgba(224, 29, 133, 0.10) 15%,
+      transparent 38%
+    ),
+
+    radial-gradient(
+      circle at 95% 25%,
+      rgba(224, 29, 133, 0.18) 0%,
+      rgba(224, 29, 133, 0.08) 18%,
+      transparent 40%
+    ),
+
+    radial-gradient(
+      circle at 20% 85%,
+      rgba(224, 29, 133, 0.14) 0%,
+      rgba(224, 29, 133, 0.06) 20%,
+      transparent 40%
+    ),
+
+    radial-gradient(
+      circle at 85% 90%,
+      rgba(224, 29, 133, 0.16) 0%,
+      rgba(224, 29, 133, 0.05) 18%,
+      transparent 38%
+    ),
+
+    linear-gradient(
+      rgba(224, 29, 133, 0.025) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(224, 29, 133, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    auto,
+    auto,
+    auto,
+    auto,
+    45px 45px,
+    45px 45px;
+
+  background-attachment: fixed;
+}
+
 h1, h2, h3, th {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
