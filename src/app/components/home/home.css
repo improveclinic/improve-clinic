@@ -111,3 +111,22 @@
     border-color: #e01d85;
     color: white;
 }
+
+
+
+section {
+  position: relative;
+}
+
+.section-soft {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.section-pink {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(224, 29, 133, 0.035),
+      rgba(255, 255, 255, 0.75)
+    );
+}

@@ -4,57 +4,182 @@
 
 /* SFONDO GLOBALE */
 body {
-  background-color: #fafafa;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
 
-  background-image:
-    radial-gradient(
-      circle at 5% 10%,
-      rgba(224, 29, 133, 0.22) 0%,
-      rgba(224, 29, 133, 0.10) 15%,
-      transparent 38%
-    ),
-
-    radial-gradient(
-      circle at 95% 25%,
-      rgba(224, 29, 133, 0.18) 0%,
-      rgba(224, 29, 133, 0.08) 18%,
-      transparent 40%
-    ),
-
-    radial-gradient(
-      circle at 20% 85%,
-      rgba(224, 29, 133, 0.14) 0%,
-      rgba(224, 29, 133, 0.06) 20%,
-      transparent 40%
-    ),
-
-    radial-gradient(
-      circle at 85% 90%,
-      rgba(224, 29, 133, 0.16) 0%,
-      rgba(224, 29, 133, 0.05) 18%,
-      transparent 38%
-    ),
-
+  background:
     linear-gradient(
-      rgba(224, 29, 133, 0.025) 1px,
-      transparent 1px
-    ),
-
-    linear-gradient(
-      90deg,
-      rgba(224, 29, 133, 0.025) 1px,
-      transparent 1px
+      135deg,
+      #ffffff 0%,
+      #fafafa 45%,
+      #f6f6f6 100%
     );
 
-  background-size:
-    auto,
-    auto,
-    auto,
-    auto,
-    45px 45px,
-    45px 45px;
+  color: #151515;
+}
 
-  background-attachment: fixed;
+
+/* =========================================================
+   DECORAZIONE PRINCIPALE — grande forma rosa
+   ========================================================= */
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  width: 720px;
+  height: 720px;
+
+  top: -360px;
+  right: -260px;
+
+  border-radius: 42% 58% 65% 35% / 40% 45% 55% 60%;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(224, 29, 133, 0.18),
+      rgba(224, 29, 133, 0.035)
+    );
+
+  transform: rotate(-18deg);
+
+  filter: blur(1px);
+
+  pointer-events: none;
+  z-index: -2;
+
+  animation: floatingShape 18s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   SECONDA FORMA — quasi invisibile
+   ========================================================= */
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  width: 560px;
+  height: 560px;
+
+  bottom: -330px;
+  left: -250px;
+
+  border-radius: 58% 42% 35% 65% / 55% 35% 65% 45%;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(224, 29, 133, 0.09),
+      rgba(224, 29, 133, 0.015)
+    );
+
+  transform: rotate(25deg);
+
+  pointer-events: none;
+  z-index: -2;
+
+  animation: floatingShapeReverse 22s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   MOVIMENTO ORGANICO
+   ========================================================= */
+
+@keyframes floatingShape {
+
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(-18deg)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(-25px, 20px, 0)
+      rotate(-12deg)
+      scale(1.035);
+  }
+
+  100% {
+    transform:
+      translate3d(20px, 35px, 0)
+      rotate(-20deg)
+      scale(1.02);
+  }
+}
+
+
+@keyframes floatingShapeReverse {
+
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(25deg)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(25px, -20px, 0)
+      rotate(18deg)
+      scale(1.04);
+  }
+
+  100% {
+    transform:
+      translate3d(10px, -35px, 0)
+      rotate(28deg)
+      scale(1.02);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  body::before {
+    width: 450px;
+    height: 450px;
+
+    top: -230px;
+    right: -200px;
+
+    opacity: 0.8;
+  }
+
+  body::after {
+    width: 380px;
+    height: 380px;
+
+    bottom: -220px;
+    left: -190px;
+
+    opacity: 0.7;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITÀ
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  body::before,
+  body::after {
+    animation: none;
+  }
 }
 
 h1, h2, h3, th {
