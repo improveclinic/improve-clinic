@@ -12,6 +12,8 @@ import { Andrea } from './components/fisioterapisti/andrea/andrea';
 import { Martina } from './components/fisioterapisti/martina/martina';
 import { Matteo } from './components/fisioterapisti/matteo/matteo';
 import { Simone } from './components/fisioterapisti/simone/simone';
+import { Privacy } from './components/privacy/privacy';
+import { Cookie } from './components/cookie/cookie';
 
 export const routes: Routes = [
   { path: '', component: Home },                              // Home
@@ -26,5 +28,7 @@ export const routes: Routes = [
   { path: 'fisioterapisti/martina', component: Martina },     // Martina
   { path: 'fisioterapisti/matteo', component: Matteo },       // Matteo
   { path: 'fisioterapisti/simone', component: Simone },       // Simone
+  { path: 'privacy-policy', component: Privacy },             // Privacy Policy
+  { path: 'cookie-policy', component: Cookie },               // Cookie Policy
   { path: '**', component: NotFound }                         // 404
 ];

@@ -3,10 +3,11 @@ import { FormsModule, NgForm } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 
 import { SeoService } from '../../services/seo.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contatti',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './contatti.html',
   styleUrl: './contatti.css',
 })
