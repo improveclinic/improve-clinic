@@ -130,3 +130,81 @@ section {
       rgba(255, 255, 255, 0.75)
     );
 }
+
+
+.hero-wrapper {
+    position: relative;
+}
+
+.scroll-down {
+    position: absolute;
+
+    left: 50%;
+    bottom: 5%;
+
+    transform: translateX(-50%);
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff;
+    color: #111;
+
+    font-size: 1.5rem;
+
+    text-decoration: none;
+
+    z-index: 20;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+    animation: bounce 2s infinite;
+
+    transition:
+        color .3s ease,
+        background-color .3s ease,
+        transform .3s ease;
+}
+
+.scroll-down:hover {
+    background: #e01d85;
+    color: white;
+    transform: translateX(-50%) translateY(-4px);
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-8px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-4px);
+    }
+}
+
+@media (max-width: 576px) {
+
+    .scroll-down {
+        width: 40px;
+        height: 40px;
+
+        bottom: 5%;
+
+        font-size: 1.3rem;
+    }
+}

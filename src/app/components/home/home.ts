@@ -25,5 +25,4 @@ export class Home implements OnInit {
       this.seoService.getOrganizationSchema()
     );
   }
-
 }
