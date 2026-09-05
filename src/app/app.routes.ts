@@ -14,6 +14,7 @@ import { Matteo } from './components/fisioterapisti/matteo/matteo';
 import { Simone } from './components/fisioterapisti/simone/simone';
 import { Privacy } from './components/privacy/privacy';
 import { Cookie } from './components/cookie/cookie';
+import { Faq } from './components/faq/faq';
 
 export const routes: Routes = [
   { path: '', component: Home },                              // Home
@@ -30,5 +31,6 @@ export const routes: Routes = [
   { path: 'fisioterapisti/simone', component: Simone },       // Simone
   { path: 'privacy-policy', component: Privacy },             // Privacy Policy
   { path: 'cookie-policy', component: Cookie },               // Cookie Policy
+  { path: 'faq', component: Faq },                            // Faq
   { path: '**', component: NotFound }                         // 404
 ];
